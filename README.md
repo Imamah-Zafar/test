@@ -1,6 +1,6 @@
-# Using Stack.Js libraries with different framework
+# Using Stack.Js libraries with different framework and bundlers
 
-Basic Installation steps to use stack.js library with different framework
+Basic Installation steps to use stack.js library with different framework and bundlers
 
 ## Create React App
 ### Installation 
@@ -70,12 +70,12 @@ vue create hello-world
 ```
 In the terminal, you will be asked to choose a preset and after choosing the appropriate one, the project will be created
 
-### Run Vue App
+To run Vue App
 ```
 cd hello-world
 npm run serve
 ```
-### Use Vue Gui
+To use Vue GUI
 ```
 vue ui
 ```
@@ -98,3 +98,20 @@ ng serve
 ```
 In your browser, open http://localhost:4200/ to see the new application run
 
+
+## Vitejs
+### Installation
+```
+npm init vite@latest
+```
+You will then be promted to choose the project name, framework and variant or can specify directly through extra command line options
+```
+npm init vite@latest hello-world --template vue
+```
+A folder will be created in the project directory with the project name specified. Now run the following commands 
+```
+cd hello-world
+npm install 
+npm run dev 
+```
+In your browser, open http://localhost:3000/ to see the new application run
