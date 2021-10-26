@@ -114,4 +114,60 @@ cd hello-world
 npm install 
 npm run dev 
 ```
-In your browser, open http://localhost:3000/ to see the new application run
+In your browser, open http://localhost:3000/ to see the application run
+
+## Webpack
+### Installation
+```
+npm install webpack webpack-cli --save-dev
+```
+Check package.json file where webpack and webpack-cli will be listed as depenedencies near the bottom
+The project is ready to start using webpack as its bundler
+
+### Setting up a project to Bundle 
+The project has nothing to bundle yet. The following insturctions explain how a simple bundle process happens.
+
+In the same location as package.json file, add the following:
+
+* A folder called src
+* An index.js file inside src
+* A dist folder
+
+The “source” code is the code that will be writen and edited. The “distribution” code is the minimized and optimized output of the build process that the browser will display.
+
+The deafult entry point is ./src/index.js file. To build the bundle with webpack run the following command
+```
+npx webpack
+```
+### Configuring webpack to generate HTML
+To populate the dist folder, execute the following command so an HTML file can be generated in the dist folder
+```
+npm install html-webpack-plugin --save-dev
+```
+
+## Parcel
+### Installation
+```
+npm install --save-dev parcel
+```
+Check package.json file where Parcel will be listed as depenedencies near the bottom.
+### Setting up a project to Bundle 
+In the same location as package.json file, add the following:
+
+* A folder called src
+* An index.ts file inside src
+* A dist folder
+* A main.js file inside dist
+
+In package.json file, add the following lines 
+```
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+```
+The "source" field will be used to refernce the source files and the "main" field will be used as the output file of the build.
+
+Add your code in the src/index.js file and to build use the following command:
+```
+npx parcel build
+```
+Parcel will build the source code and output a JavaScript file in dist/main.js as referenced by the main field.
