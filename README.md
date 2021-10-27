@@ -4,39 +4,13 @@ Basic Installation steps to use stack.js library with different framework and bu
 
 Make sure you have [Node.js](https://nodejs.org/en/) ( Node 16.7.0 ) and Npm installed in your machine.
 
+Clone the Stacks.js repository and follow the environment setup steps mentioned in the [readme file](https://github.com/blockstack/stacks.js/blob/master/README.md)
+
 ## Create React App
 ### [Installation](https://create-react-app.dev/docs/getting-started/)
 ```
 npx create-react-app hello-world
 ```
-Create-React-App requires the following dependencies:
-
-"jest": "26.6.0"
-
-"webpack": "4.44.2"
-
-However, Stack.js uses a different version of the above mentioned packages. 
-By running the following command, you will see that the version of Jest installed by stack.js is "26.6.3"
-```
-grep version node_modules/jest/package.json
-```
-By running the following command, you will see that the version of webpack installed by stack.js is "5.50.0"
-```
-grep version node_modules/webpack/package.json
-```
-To avoid the issue of incompatible version, execute the following steps:
-
-#### Installing compatible version of Jest
-```
-npm uninstall jest
-npm install jest@26.6.0
-```
-#### Installing compatible version of Webpack
-```
-npm uninstall webpack
-npm install webpack@4.44.2
-```
-This will solve issue of incompatible versions.
 
 #### Available Scripts
 First go to the create react app project directory
@@ -81,6 +55,55 @@ To use Vue GUI
 ```
 vue ui
 ```
+To test Stacks.js library with Vue
+ ```
+ cd src/components
+ touch StacksWallet.vue
+ ```
+ This will create a new vue file in the src/component directory. To try out Stacks.js wallet-sdk package copy the following code in the newly created file.
+ ```
+ <template>
+
+<div> <b>Generate Secret Key</b>: {{ secretKey }}</div>
+
+</template>
+
+<script>
+ import { generateSecretKey } from '@stacks/wallet-sdk';
+  export default {
+   data() {
+  const secretKey = generateSecretKey();
+    return {
+      secretKey
+    }
+  }
+  }
+</script>
+```
+Go to hello-world/src/App.vue file and import the newly created vue file. The App.vue will be modified to look like this.
+```
+<template>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld  msg="Welcome to Your Vue.js App"/>
+    <StacksWallet msg=""/>
+  </div>
+</template>
+
+<script>
+import HelloWorld from './components/HelloWorld.vue'
+import StacksWallet from './components/StacksWallet.vue'
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+    StacksWallet
+  }
+}
+</script>
+```
+Now if you run ```npm run serve``` command you will see a newly generated secret key at the bottom of the page.
 
 ## Angular CLI
 ### [Installation](https://angular.io/cli)
