@@ -1,9 +1,11 @@
 # Using Stack.Js libraries with different framework and bundlers
 
-Basic Installation steps to use stack.js library with different framework and bundlers
+Basic Installation steps to use stack.js library with different framework and bundlers.
+
+Make sure you have [Node.js](https://nodejs.org/en/) ( Node 16.7.0 ) and Npm installed in your machine.
 
 ## Create React App
-### Installation 
+### [Installation](https://create-react-app.dev/docs/getting-started/)
 ```
 npx create-react-app hello-world
 ```
@@ -55,7 +57,7 @@ npm run build
 ```
 
 ## Vue CLI
-### Installation
+### [Installation](https://cli.vuejs.org/guide/installation.html)
 
 ```
 npm install -g @vue/cli
@@ -81,11 +83,11 @@ vue ui
 ```
 
 ## Angular CLI
-### Installation
+### [Installation](https://angular.io/cli)
 ```
 npm install -g @angular/cli
 ```
-To veryify angular cli has been installed properly
+To verify angular cli has been installed properly
 ```
 ng help
 ```
@@ -100,11 +102,11 @@ In your browser, open http://localhost:4200/ to see the new application run
 
 
 ## Vitejs
-### Installation
+### [Installation](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 ```
 npm init vite@latest
 ```
-You will then be promted to choose the project name, framework and variant or can specify directly through extra command line options
+You will then be prompted to choose the project name, framework and variant or can specify directly through extra command line options
 ```
 npm init vite@latest hello-world --template vue
 ```
@@ -117,15 +119,15 @@ npm run dev
 In your browser, open http://localhost:3000/ to see the application run
 
 ## Webpack
-### Installation
+### [Installation](https://webpack.js.org/guides/getting-started/)
 ```
 npm install webpack webpack-cli --save-dev
 ```
-Check package.json file where webpack and webpack-cli will be listed as depenedencies near the bottom
+Check package.json file where webpack and webpack-cli will be listed as dependencies near the bottom
 The project is ready to start using webpack as its bundler
 
 ### Setting up a project to Bundle 
-The project has nothing to bundle yet. The following insturctions explain how a simple bundle process happens.
+The project has nothing to bundle yet. The following instructions explain how a simple bundle process happens.
 
 In the same location as package.json file, add the following:
 
@@ -133,9 +135,9 @@ In the same location as package.json file, add the following:
 * An index.js file inside src
 * A dist folder
 
-The “source” code is the code that will be writen and edited. The “distribution” code is the minimized and optimized output of the build process that the browser will display.
+The “source” code is the code that will be written and edited. The “distribution” code is the minimized and optimized output of the build process that the browser will display.
 
-The deafult entry point is ./src/index.js file. To build the bundle with webpack run the following command
+The default entry point is ./src/index.js file. To build the bundle with webpack run the following command
 ```
 npx webpack
 ```
@@ -146,11 +148,12 @@ npm install html-webpack-plugin --save-dev
 ```
 
 ## Parcel
-### Installation
+### [Installation](https://parceljs.org/getting-started/webapp/)
 ```
 npm install --save-dev parcel
 ```
-Check package.json file where Parcel will be listed as depenedencies near the bottom.
+Check package.json file where Parcel will be listed as dependencies near the bottom.
+
 ### Setting up a project to Bundle 
 In the same location as package.json file, add the following:
 
@@ -164,7 +167,7 @@ In package.json file, add the following lines
   "source": "src/index.ts",
   "main": "dist/main.js",
 ```
-The "source" field will be used to refernce the source files and the "main" field will be used as the output file of the build.
+The "source" field will be used to reference the source files and the "main" field will be used as the output file of the build.
 
 Add your code in the src/index.js file and to build use the following command:
 ```
