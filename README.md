@@ -4,8 +4,6 @@ Basic Installation steps to use stack.js library with different framework and bu
 
 Make sure you have [Node.js](https://nodejs.org/en/) ( Node 16.7.0 ) and Npm installed in your machine.
 
-Clone the Stacks.js repository and follow the environment setup steps mentioned in the [readme file](https://github.com/blockstack/stacks.js/blob/master/README.md)
-
 ## Create React App
 ### [Installation](https://create-react-app.dev/docs/getting-started/)
 ```
