@@ -56,6 +56,9 @@ To use Vue GUI
 vue ui
 ```
 To test Stacks.js library with Vue
+```
+npm install @stacks/wallet-sdk --save
+```
  ```
  cd src/components
  touch StacksWallet.vue
