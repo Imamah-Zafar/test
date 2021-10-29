@@ -4,6 +4,8 @@ Basic Installation steps to use stack.js library with different framework and bu
 
 Make sure you have [Node.js](https://nodejs.org/en/) ( Node 16.7.0 ) and Npm installed in your machine.
 
+# Frameworks
+
 ## Create React App
 ### [Installation](https://create-react-app.dev/docs/getting-started/)
 ```
@@ -163,7 +165,7 @@ To test Stacks.js library with Angular CLI
 ```
 npm install @stacks/transactions
 ```
-Incase you get the ```Angular default import error```, add the following flag in the compilerOptions section of tsconfig.json
+In case you get the ```Angular default import error```, add the following flag in the compilerOptions section of tsconfig.json
 ```
 "allowSyntheticDefaultImports": true
 ```
@@ -197,6 +199,8 @@ Update ```src/app/app.component.html``` to connect the data defined in ```src/ap
 <h1> {{title}}</h1>
 <div> <b>Generate Public Key</b>: {{ publicKey  }}</div>
 ```
+
+# Bundlers
 
 ## Vitejs
 ### [Installation](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
