@@ -1,6 +1,6 @@
 # Using Stack.Js libraries with different framework and bundlers
 
-Basic Installation steps to use stack.js library with different framework and bundlers.
+Basic installation steps to use stack.js library with different framework and bundlers.
 
 Make sure you have [Node.js](https://nodejs.org/en/) ( Node 16.7.0 ) and Npm installed in your machine.
 
