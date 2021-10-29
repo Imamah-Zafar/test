@@ -27,7 +27,42 @@ To build the app for production to the build folder
 ```
 npm run build
 ```
+### Create Project 
+To test Stacks.js library with Create-React-App
+```
+npm install @stacks/wallet-sdk --save
+```
+Open ```src/App.js``` . Update the file to make changes to the React component. 
+```
+import logo from './logo.svg';
+import './App.css';
+import { generateSecretKey } from '@stacks/wallet-sdk';
 
+function App() {
+  const secretKey = generateSecretKey();
+  const secretKey128 = generateSecretKey(128);
+
+  return (
+
+    <div className="App">
+      <img src={logo} className="App-logo" alt="logo" />
+
+      <p>
+        <b>Generate 24-word Secret Key</b>: {secretKey}
+      </p>
+
+      <p>
+        <b>Generate 12-word Secret Key</b>: {secretKey128}
+      </p>
+
+    </div>
+  );
+}
+
+export default App;
+
+```
+Run ```npm start``` command and then head over to your browser to see the newly generated keys. 
 ## Vue CLI
 ### [Installation](https://cli.vuejs.org/guide/installation.html)
 
@@ -61,7 +96,7 @@ npm install @stacks/wallet-sdk --save
  cd src/components
  touch StacksWallet.vue
  ```
- This will create a new vue file in the src/component directory. To try out Stacks.js wallet-sdk package copy the following code in the newly created file.
+ This will create a new vue file in the ```src/component``` directory. To try out Stacks.js wallet-sdk package copy the following code in the newly created file.
  ```
  <template>
 
@@ -81,7 +116,7 @@ npm install @stacks/wallet-sdk --save
   }
 </script>
 ```
-Go to hello-world/src/App.vue file and import the newly created vue file. The App.vue will be modified to look like this.
+Go to ```src/App.vue``` file and import the newly created vue file. The App.vue will be modified to look like this.
 ```
 <template>
   <div id="app">
@@ -124,6 +159,44 @@ ng serve
 ```
 In your browser, open http://localhost:4200/ to see the new application run
 
+To test Stacks.js library with Angular CLI
+```
+npm install @stacks/transactions
+```
+Incase you get the ```Angular default import error```, add the following flag in the compilerOptions section of tsconfig.json
+```
+"allowSyntheticDefaultImports": true
+```
+
+To avoid ```Uncaught ReferenceError: global is not defined when adding package``` add the following to your ```src/pollyfills.ts```
+```
+(window as any).global = window;
+```
+
+Angular allows you to bind application state defined inside of your ```src/app/app.component.ts``` file to its HTML template at ```src/app/app.component.html```.
+
+Modify the AppComponent as
+```
+import { Component } from '@angular/core';
+import { getPublicKey, makeRandomPrivKey } from '@stacks/transactions';
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Stacks Transaction Package';
+  privateKey=makeRandomPrivKey()
+  publicKey = getPublicKey(this.privateKey).data;
+}
+```
+Update ```src/app/app.component.html``` to connect the data defined in ```src/app/app.component.ts```
+```
+<h1> {{title}}</h1>
+<div> <b>Generate Public Key</b>: {{ publicKey  }}</div>
+```
 
 ## Vitejs
 ### [Installation](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
